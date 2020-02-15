@@ -1,0 +1,10 @@
+1. select version(); # show mysql version
+2. UPDATE mysql.user SET authentication_string = PASSWORD('password') WHERE User = 'root'; # change root password
+3. FLUSH PRIVILEGES; # reload the stored user information
+4. SELECT User, Host, authentication_string FROM mysql.user; # View users
+5. CREATE DATABASE DATABASE_NAME;
+6. SHOW DATABASES;
+7. INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
+VALUES('demouser','localhost',PASSWORD('demopassword'),'','',''); # Add a database user
+8. GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost; # Give the user full permissions for your new database
+9. SHOW GRANTS FOR 'amir'@'localhost';
